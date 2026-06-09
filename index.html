@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Descarga gratis el Kit ATS diseñado para profesionales LATAM. Optimiza tu CV, supera filtros automáticos y consigue entrevistas para empleos remotos en USD.">
+  <meta name="robots" content="index, follow">
+  <title>Kit ATS Gratis — Consigue empleos remotos en USD · Empleo Remoto LATAM</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="Kit ATS Gratis — Empleo Remoto LATAM">
+  <meta property="og:description" content="Descarga tu Kit ATS y empieza a conseguir entrevistas para empleos remotos en USD desde Latinoamérica.">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="es_LA">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       DESIGN TOKENS
+       ============================================================ */
+    :root {
+      --bg:           #0B0B0B;
+      --surface:      #131313;
+      --surface-2:    #1C1C1C;
+      --border:       rgba(255,255,255,0.07);
+      --accent:       #F0C000;
+      --accent-dim:   rgba(240,192,0,0.11);
+      --accent-glow:  rgba(240,192,0,0.30);
+      --accent-dark:  #0B0B0B;
+      --text:         #F2F2F2;
+      --text-2:       rgba(242,242,242,0.52);
+      --text-3:       rgba(242,242,242,0.28);
+      --green:        #4ADE80;
+      --green-dim:    rgba(74,222,128,0.14);
+      --r:            10px;
+      --r-lg:         16px;
+      --r-xl:         24px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       SECTION 1 — HERO
+       ============================================================ */
+    .hero {
+      padding: 0 22px;
+      min-height: 100svh;
+    }
+
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+    }
+
+    /* — Logo — */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 22px 0 18px;
+      flex-shrink: 0;
+    }
+    .logo-pin {
+      width: 28px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-pin svg { width: 13px; height: 13px; }
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .logo-wordmark span:first-child {
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+    .logo-wordmark span:last-child {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    /* — Hero body: stacked mobile, side-by-side desktop — */
+    .hero-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 40px;
+    }
+
+    /* — Social proof pill — */
+    .social-proof {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(240,192,0,0.18);
+      border-radius: 100px;
+      padding: 5px 13px 5px 10px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+    .sp-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse-dot 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.75); }
+    }
+    .social-proof span {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    /* — Headline — */
+    .hero-left h1 {
+      font-size: 2.05rem;
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 13px;
+    }
+    .hero-left h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    /* — Subtitle — */
+    .hero-sub {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 22px;
+      max-width: 380px;
+    }
+
+    /* — Checklist — */
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 26px;
+    }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .ci {
+      width: 19px;
+      height: 19px;
+      background: var(--green-dim);
+      border: 1px solid rgba(74,222,128,0.22);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ci svg { width: 9px; height: 9px; }
+
+    /* — Primary CTA Button — */
+    .cta-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 17px 28px;
+      background: var(--accent);
+      color: var(--accent-dark);
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--r-xl);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.14s ease, box-shadow 0.14s ease;
+      animation: cta-pulse 3s ease-in-out infinite;
+    }
+    @keyframes cta-pulse {
+      0%, 100% { box-shadow: 0 0 28px var(--accent-glow), 0 4px 18px rgba(0,0,0,0.45); }
+      50%       { box-shadow: 0 0 48px rgba(240,192,0,0.45), 0 4px 18px rgba(0,0,0,0.45); }
+    }
+    .cta-primary:active { transform: scale(0.975); }
+    .cta-arrow { font-size: 1.05em; }
+
+    /* — Trust bar — */
+    .trust-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 13px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.76rem;
+      color: var(--text-3);
+      padding: 0 11px;
+    }
+    .trust-item:not(:last-child) { border-right: 1px solid var(--border); }
+    .trust-item svg { width: 10px; height: 10px; opacity: 0.55; }
+
+    /* — Hero right: CSS mockup — */
+    .hero-right {
+      display: flex;
+      justify-content: center;
+      padding-top: 38px;
+    }
+
+    .mockup-stage {
+      position: relative;
+      width: 224px;
+      height: 185px;
+    }
+
+    /* Document thumbnails behind the kit box */
+    .m-doc {
+      position: absolute;
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+    }
+    .m-doc-cl {
+      width: 90px;
+      height: 117px;
+      background: #f6f6f6;
+      right: 14px;
+      top: 38px;
+      transform: rotate(7deg);
+      z-index: 0;
+    }
+    .m-doc-cv {
+      width: 103px;
+      height: 133px;
+      background: #f0f0f0;
+      right: -8px;
+      top: 18px;
+      transform: rotate(3.5deg);
+      z-index: 1;
+    }
+
+    /* Main kit box */
+    .m-kit {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 122px;
+      height: 158px;
+      background: #151515;
+      border: 1px solid rgba(240,192,0,0.22);
+      border-radius: 10px;
+      z-index: 2;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 14px 44px rgba(0,0,0,0.65), 0 0 24px rgba(240,192,0,0.07);
+    }
+    .m-kit-tag {
+      font-size: 7.5px;
+      font-weight: 700;
+      color: rgba(240,192,0,0.5);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .m-kit-big {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .m-kit-sub {
+      font-size: 7.5px;
+      font-weight: 700;
+      color: var(--text-2);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      line-height: 1.35;
+      margin-top: 4px;
+    }
+    .m-kit-brand {
+      font-size: 6.5px;
+      font-weight: 600;
+      color: var(--text-3);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Skeleton lines inside mini docs */
+    .sk { height: 3px; background: #d4d4d4; border-radius: 2px; margin-bottom: 2px; }
+    .sk-d { height: 3px; background: #aaa; border-radius: 2px; margin-bottom: 2px; }
+    .sk-h { height: 1px; background: #e0e0e0; margin: 4px 0; }
+    .sk.w90 { width: 90%; } .sk.w75 { width: 75%; }
+    .sk.w65 { width: 65%; } .sk.w55 { width: 55%; }
+    .sk-row { display: flex; align-items: center; gap: 3px; margin-bottom: 3px; }
+    .sk-box { width: 5px; height: 5px; background: #22c55e; border-radius: 1px; flex-shrink: 0; }
+
+    .m-doc-inner { padding: 7px; }
+    .m-doc-inner .sk-d.name { height: 5px; width: 70%; background: #444; margin-bottom: 2px; }
+    .m-doc-inner .sk-d.role { height: 4px; width: 50%; background: #bbb; margin-bottom: 5px; }
+
+    /* ============================================================
+       SECTION 2 — KIT SHOWCASE
+       ============================================================ */
+    .section-kit {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 52px 22px;
+    }
+    .section-kit-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 11px;
+    }
+    .section-eyebrow .ey-line {
+      width: 18px;
+      height: 1.5px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    .section-eyebrow span {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-kit h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 30px;
+    }
+
+    .docs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    /* — Document card base — */
+    .doc-card {
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.28);
+    }
+
+    .doc-card-body {
+      height: 185px;
+      padding: 15px 13px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dc-title {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+    }
+
+    /* Kit cover — dark */
+    .dc-cover {
+      background: linear-gradient(150deg, #181818 0%, #0f0f0f 100%);
+      border: 1px solid rgba(240,192,0,0.18);
+    }
+    .dc-cover .doc-card-body { justify-content: space-between; }
+    .dcc-tag  { font-size: 7px; font-weight: 700; color: rgba(240,192,0,0.5); letter-spacing: 0.12em; text-transform: uppercase; }
+    .dcc-big  { font-size: 30px; font-weight: 900; color: var(--accent); letter-spacing: -0.03em; line-height: 1; }
+    .dcc-desc { font-size: 7.5px; font-weight: 600; color: var(--text-2); letter-spacing: 0.07em; text-transform: uppercase; line-height: 1.4; margin-top: 4px; }
+    .dcc-brand { font-size: 6.5px; font-weight: 600; color: var(--text-3); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 4px; }
+    .dcc-brand::before { content: ''; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; opacity: 0.5; }
+
+    /* CV card — light */
+    .dc-cv { background: #f4f4f4; }
+    .dc-cv .dc-title { color: #222; }
+    .cv-header {
+      background: #1a1a1a;
+      border-radius: 5px;
+      padding: 8px 9px;
+      margin-bottom: 8px;
+    }
+    .cv-h-name { height: 6px; background: var(--accent); border-radius: 2px; width: 72%; margin-bottom: 3px; }
+    .cv-h-role { height: 4px; background: rgba(255,255,255,0.38); border-radius: 2px; width: 50%; }
+    .cv-sec-lbl { height: 4px; background: #666; border-radius: 1px; width: 40%; margin: 6px 0 4px; }
+    .cv-hr { height: 1px; background: #ddd; margin-bottom: 4px; }
+    .cv-line { height: 3px; background: #ccc; border-radius: 1px; margin-bottom: 2px; }
+    .cv-line.w90 { width: 90%; } .cv-line.w75 { width: 75%; }
+    .cv-line.w80 { width: 80%; } .cv-line.w60 { width: 60%; }
+
+    /* Checklist card — light */
+    .dc-cl { background: #f7f8f9; }
+    .dc-cl .dc-title { color: #222; }
+    .cl-sec { margin-bottom: 9px; }
+    .cl-sec-lbl { height: 3px; background: #aaa; border-radius: 1px; width: 32%; margin-bottom: 5px; }
+    .cl-row { display: flex; align-items: center; gap: 5px; margin-bottom: 4px; }
+    .cl-chk { width: 8px; height: 8px; background: var(--green); border-radius: 2px; flex-shrink: 0; }
+    .cl-text { height: 3px; background: #ccc; border-radius: 1px; flex: 1; }
+
+    /* Guide card — light */
+    .dc-guide { background: #f5f5f8; }
+    .dc-guide .dc-title { color: #222; }
+    .gb {
+      display: flex;
+      gap: 5px;
+      align-items: flex-start;
+      margin-bottom: 9px;
+    }
+    .gb-icon {
+      width: 16px;
+      height: 16px;
+      background: #222;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gb-icon::after {
+      content: '';
+      width: 7px;
+      height: 5px;
+      background: rgba(255,255,255,0.75);
+      border-radius: 2px;
+    }
+    .gb-bubble {
+      flex: 1;
+      background: white;
+      border-radius: 0 6px 6px 6px;
+      padding: 6px 7px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .gb-line { height: 3px; background: #d0d0d0; border-radius: 1px; margin-bottom: 2px; }
+    .gb-line.w90 { width: 90%; } .gb-line.w65 { width: 65%; }
+
+    /* Card footer label */
+    .dc-label {
+      padding: 9px 13px;
+      font-size: 10.5px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .dc-cover .dc-label { background: #1b1b1b; color: var(--text-2); border-top: 1px solid rgba(255,255,255,0.05); }
+    .dc-cv .dc-label,
+    .dc-cl .dc-label,
+    .dc-guide .dc-label { background: white; color: #666; border-top: 1px solid rgba(0,0,0,0.05); }
+
+    /* ============================================================
+       SECTION 3 — FINAL CTA
+       ============================================================ */
+    .section-final {
+      padding: 60px 22px 72px;
+      text-align: center;
+    }
+    .section-final-inner {
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    .fin-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-final h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .section-final h2 em { font-style: normal; color: var(--accent); }
+    .section-final p {
+      font-size: 0.9rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    /* ============================================================
+       DESKTOP — ≥ 680px
+       ============================================================ */
+    @media (min-width: 680px) {
+      .hero { padding: 0 40px; }
+
+      .hero-body {
+        flex-direction: row;
+        align-items: center;
+        gap: 64px;
+        padding-bottom: 0;
+      }
+      .hero-left { flex: 1; max-width: 500px; }
+      .hero-right {
+        flex-shrink: 0;
+        padding-top: 0;
+        padding-bottom: 40px;
+      }
+      .hero-left h1 { font-size: 2.7rem; }
+      .cta-primary { width: auto; }
+
+      .mockup-stage { width: 280px; height: 230px; }
+      .m-kit { width: 150px; height: 194px; top: 10px; }
+      .m-kit-big { font-size: 30px; }
+      .m-doc-cv { width: 130px; height: 165px; right: -14px; top: 22px; }
+      .m-doc-cl { width: 112px; height: 145px; right: 14px; top: 46px; }
+
+      .section-kit { padding: 64px 40px; }
+      .docs-grid { grid-template-columns: repeat(4, 1fr); }
+      .doc-card-body { height: 200px; }
+
+      .section-final { padding: 72px 40px 88px; }
+    }
+
+    /* ============================================================
+       REDUCED MOTION
+       ============================================================ */
+    @media (prefers-reduced-motion: reduce) {
+      .cta-primary { animation: none; box-shadow: 0 4px 18px rgba(0,0,0,0.4); }
+      .sp-dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     SECTION 1 — HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+
+    <!-- Logo -->
+    <a class="logo" href="#top" aria-label="Empleo Remoto LATAM — volver al inicio">
+      <div class="logo-pin">
+        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M7 0.5C4.515 0.5 2.5 2.515 2.5 5c0 3.728 4.5 8.5 4.5 8.5S11.5 8.728 11.5 5C11.5 2.515 9.485 0.5 7 0.5zm0 6.75A1.75 1.75 0 1 1 7 3.25a1.75 1.75 0 0 1 0 3.5z" fill="#0B0B0B"/>
+        </svg>
+      </div>
+      <div class="logo-wordmark">
+        <span>Empleo Remoto</span>
+        <span>LATAM</span>
+      </div>
+    </a>
+
+    <!-- Two-column body -->
+    <div class="hero-body">
+
+      <!-- Left: copy + CTA -->
+      <div class="hero-left">
+
+        <!-- Social proof -->
+        <div class="social-proof" aria-label="Miles de profesionales ya lo tienen">
+          <div class="sp-dot" aria-hidden="true"></div>
+          <span>Miles de profesionales ya lo tienen</span>
+        </div>
+
+        <!-- Headline -->
+        <h1>Consigue más entrevistas para empleos remotos <em>en USD</em></h1>
+
+        <!-- Subtitle -->
+        <p class="hero-sub">Descarga gratis el Kit ATS diseñado para optimizar tu CV, superar filtros automáticos y prepararte para entrevistas remotas.</p>
+
+        <!-- Checklist -->
+        <ul class="checklist" aria-label="El kit incluye">
+          <li>
+            <span class="ci" aria-hidden="true">
+              <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Checklist ATS
+          </li>
+          <li>
+            <span class="ci" aria-hidden="true">
+              <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Plantilla CV ATS
+          </li>
+          <li>
+            <span class="ci" aria-hidden="true">
+              <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Guía de entrevistas
+          </li>
+          <li>
+            <span class="ci" aria-hidden="true">
+              <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2L7.5 2" stroke="#4ADE80" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Vacantes remotas LATAM
+          </li>
+        </ul>
+
+        <!-- Primary CTA -->
+        <a class="cta-primary"
+           href="https://tally.so/r/A795EN"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Descargar Kit ATS gratis (abre formulario)">
+          Descargar Kit Gratis
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <!-- Trust signals -->
+        <div class="trust-bar" aria-label="Garantías">
+          <div class="trust-item">
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M6 1l1.2 2.8 3 .25-2.2 2 .7 3L6 7.7 3.3 9.05l.7-3L1.8 4.05l3-.25L6 1z" fill="currentColor"/>
+            </svg>
+            Acceso inmediato
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M6 1a5 5 0 100 10A5 5 0 006 1zm-1.5 5l1.5 1.5L9 4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            100% Gratis
+          </div>
+          <div class="trust-item">
+            <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <rect x="2" y="5.5" width="8" height="5.5" rx="1.2" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            Sin spam
+          </div>
+        </div>
+
+      </div><!-- /hero-left -->
+
+      <!-- Right: CSS product mockup -->
+      <div class="hero-right" aria-hidden="true">
+        <div class="mockup-stage">
+
+          <!-- Checklist thumbnail (back) -->
+          <div class="m-doc m-doc-cl">
+            <div class="m-doc-inner" style="padding:7px">
+              <div class="sk sk-d" style="width:55%;height:4px;background:#888;margin-bottom:4px"></div>
+              <div style="height:1px;background:#e0e0e0;margin-bottom:5px"></div>
+              <div class="sk-row"><div class="sk-box"></div><div class="sk w90"></div></div>
+              <div class="sk-row"><div class="sk-box"></div><div class="sk w75"></div></div>
+              <div class="sk-row"><div class="sk-box"></div><div class="sk w90"></div></div>
+              <div style="height:1px;background:#e0e0e0;margin:5px 0"></div>
+              <div class="sk-row"><div class="sk-box"></div><div class="sk w65"></div></div>
+              <div class="sk-row"><div class="sk-box"></div><div class="sk w80"></div></div>
+            </div>
+          </div>
+
+          <!-- CV thumbnail (middle) -->
+          <div class="m-doc m-doc-cv">
+            <div class="m-doc-inner" style="padding:8px;background:#1a1a1a;height:42px">
+              <div class="sk-d name" style="height:5px;width:68%;background:#f0c000;margin-bottom:3px"></div>
+              <div class="sk-d role" style="height:3px;width:50%;background:rgba(255,255,255,0.35)"></div>
+            </div>
+            <div class="m-doc-inner" style="padding:7px 8px;background:#f2f2f2">
+              <div class="sk-d" style="width:38%;height:3px;background:#888;margin-bottom:4px"></div>
+              <div style="height:1px;background:#ddd;margin-bottom:3px"></div>
+              <div class="sk w90"></div>
+              <div class="sk w75"></div>
+              <div class="sk w65"></div>
+              <div class="sk-d" style="width:38%;height:3px;background:#888;margin:5px 0 4px"></div>
+              <div style="height:1px;background:#ddd;margin-bottom:3px"></div>
+              <div class="sk w80"></div>
+              <div class="sk w55"></div>
+            </div>
+          </div>
+
+          <!-- Main Kit box (front) -->
+          <div class="m-kit">
+            <div class="m-kit-tag">Kit ATS</div>
+            <div>
+              <div class="m-kit-big">KIT<br>ATS</div>
+              <div class="m-kit-sub">Para conseguir<br>empleo remoto<br>en USD</div>
+            </div>
+            <div class="m-kit-brand">● Empleo Remoto LATAM</div>
+          </div>
+
+        </div>
+      </div><!-- /hero-right -->
+
+    </div><!-- /hero-body -->
+  </div><!-- /hero-inner -->
+</section>
+
+
+<!-- ============================================================
+     SECTION 2 — KIT SHOWCASE
+     ============================================================ -->
+<section class="section-kit" aria-label="Contenido del Kit ATS">
+  <div class="section-kit-inner">
+
+    <div class="section-eyebrow">
+      <div class="ey-line" aria-hidden="true"></div>
+      <span>Lo que recibirás</span>
+    </div>
+
+    <h2>Todo lo que necesitas<br>para destacar</h2>
+
+    <div class="docs-grid">
+
+      <!-- Kit Cover -->
+      <div class="doc-card dc-cover">
+        <div class="doc-card-body">
+          <div class="dcc-tag">Incluido</div>
+          <div>
+            <div class="dcc-big">KIT<br>ATS</div>
+            <div class="dcc-desc">Para conseguir<br>empleo remoto<br>en USD</div>
+          </div>
+          <div class="dcc-brand">Empleo Remoto LATAM</div>
+        </div>
+        <div class="dc-label">Kit Completo</div>
+      </div>
+
+      <!-- CV ATS -->
+      <div class="doc-card dc-cv">
+        <div class="doc-card-body">
+          <div class="dc-title">Plantilla CV ATS</div>
+          <div class="cv-header">
+            <div class="cv-h-name"></div>
+            <div class="cv-h-role"></div>
+          </div>
+          <div class="cv-sec-lbl"></div>
+          <div class="cv-hr"></div>
+          <div class="cv-line w90"></div>
+          <div class="cv-line w75"></div>
+          <div class="cv-line w80"></div>
+          <div class="cv-sec-lbl" style="margin-top:6px"></div>
+          <div class="cv-hr"></div>
+          <div class="cv-line w60"></div>
+          <div class="cv-line w75"></div>
+        </div>
+        <div class="dc-label">CV ATS</div>
+      </div>
+
+      <!-- Checklist ATS -->
+      <div class="doc-card dc-cl">
+        <div class="doc-card-body">
+          <div class="dc-title">Checklist ATS</div>
+          <div class="cl-sec">
+            <div class="cl-sec-lbl"></div>
+            <div class="cl-row"><div class="cl-chk"></div><div class="cl-text"></div></div>
+            <div class="cl-row"><div class="cl-chk"></div><div class="cl-text"></div></div>
+            <div class="cl-row"><div class="cl-chk"></div><div class="cl-text"></div></div>
+          </div>
+          <div class="cl-sec">
+            <div class="cl-sec-lbl"></div>
+            <div class="cl-row"><div class="cl-chk"></div><div class="cl-text"></div></div>
+            <div class="cl-row"><div class="cl-chk"></div><div class="cl-text"></div></div>
+            <div class="cl-row"><div class="cl-chk"></div><div class="cl-text"></div></div>
+          </div>
+        </div>
+        <div class="dc-label">Checklist ATS</div>
+      </div>
+
+      <!-- Guía de Entrevistas -->
+      <div class="doc-card dc-guide">
+        <div class="doc-card-body">
+          <div class="dc-title">Guía Entrevistas</div>
+          <div class="gb">
+            <div class="gb-icon"></div>
+            <div class="gb-bubble">
+              <div class="gb-line w90"></div>
+              <div class="gb-line w65"></div>
+            </div>
+          </div>
+          <div class="gb">
+            <div class="gb-icon"></div>
+            <div class="gb-bubble">
+              <div class="gb-line w90"></div>
+              <div class="gb-line w65"></div>
+            </div>
+          </div>
+          <div class="gb">
+            <div class="gb-icon"></div>
+            <div class="gb-bubble">
+              <div class="gb-line w90"></div>
+              <div class="gb-line w65"></div>
+            </div>
+          </div>
+        </div>
+        <div class="dc-label">Guía de Entrevistas</div>
+      </div>
+
+    </div><!-- /docs-grid -->
+  </div><!-- /section-kit-inner -->
+</section>
+
+
+<!-- ============================================================
+     SECTION 3 — FINAL CTA
+     ============================================================ -->
+<section class="section-final" aria-label="Llamada a la acción final">
+  <div class="section-final-inner">
+
+    <span class="fin-tag">Empieza hoy mismo</span>
+
+    <h2>Tu próximo empleo remoto<br><em>en USD</em> empieza aquí</h2>
+
+    <p>Obtén acceso gratuito al Kit ATS y da el primer paso hacia tu próximo empleo remoto en dólares.</p>
+
+    <a class="cta-primary"
+       href="https://tally.so/r/A795EN"
+       target="_blank"
+       rel="noopener noreferrer"
+       style="max-width:380px;margin:0 auto 16px;"
+       aria-label="Obtener el Kit ATS gratis">
+      Quiero el Kit Gratis
+      <span class="cta-arrow" aria-hidden="true">→</span>
+    </a>
+
+    <div class="trust-bar" aria-label="Garantías">
+      <div class="trust-item">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M6 1l1.2 2.8 3 .25-2.2 2 .7 3L6 7.7 3.3 9.05l.7-3L1.8 4.05l3-.25L6 1z" fill="currentColor"/>
+        </svg>
+        Acceso inmediato
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M6 1a5 5 0 100 10A5 5 0 006 1zm-1.5 5l1.5 1.5L9 4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Gratis para siempre
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <rect x="2" y="5.5" width="8" height="5.5" rx="1.2" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M4 5.5V4a2 2 0 014 0v1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        Sin spam
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<script>
+  /* ============================================================
+     Entrance animation for doc cards on scroll
+     ============================================================ */
+  (function() {
+    var cards = document.querySelectorAll('.doc-card');
+    cards.forEach(function(el, i) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity 0.42s ease ' + (i * 0.07) + 's, transform 0.42s ease ' + (i * 0.07) + 's';
+    });
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      cards.forEach(function(el) { io.observe(el); });
+    } else {
+      /* Fallback: show all immediately */
+      cards.forEach(function(el) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
